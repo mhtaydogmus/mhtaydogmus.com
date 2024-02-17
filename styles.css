@@ -1,0 +1,408 @@
+html{
+    font-family: 'San Francisco Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #240039, #31004d, #39005d, #31004d, #240039); /* Initial background gradient */
+    background-size: 200% 200%; /* Double the background size to cover the entire screen */
+    animation: changeColorRightToLeft 5s infinite alternate cubic-bezier(0.25, 0.1, 0.25, 1), /* Right to left animation */
+    changeColorLeftToRight 5s infinite alternate cubic-bezier(0.25, 0.1, 0.25, 1); /* Left to right animation */
+}
+
+@keyframes changeColorRightToLeft {
+    0% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes changeColorLeftToRight {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+h1 {
+    color: #5000a6;
+    margin-left: 7%;
+    font-size: 800%;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    margin-top: 5%;
+    margin-bottom: 0;
+}
+
+h2 {
+    color: #ffffff;
+    margin-left: 7%;
+    font-size: 500%;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    margin-top: 0;
+    margin-bottom: 5%;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+
+nav {
+    position: fixed;
+    left: 0; /* Position the nav bar on the left side */
+    top: 50%; /* Align the nav bar vertically */
+    transform: translateY(-50%); /* Center the nav bar vertically */
+    background: rgba(51, 51, 51, 0); /* Adjust the alpha value (last parameter) as needed */
+    padding: 1%;
+    text-align: center;
+    height: 100%; /* Make the nav bar cover the entire height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 50px; /* Make the buttons circular */
+    width: 50px; /* Set a fixed width for the buttons */
+    height: 50px; /* Set a fixed height for the buttons */
+    line-height: 40px; /* Center the text vertically */
+    background-color: #232323; /* Background color of the buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Add position relative for absolute positioning of text */
+    overflow: hidden; /* Hide the overflowing text */
+    transition: all .4s; /* Add transition for smooth width change */
+    box-shadow: inset -2px 2px 2px 2px #7700b6;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+nav a:hover {
+    width: 100px; /* Expand width on hover */
+}
+
+nav a .icon {
+    display: inline-block; /* Make the icon inline block */
+    position: absolute; /* Position the icon absolutely */
+    left: 50%; /* Center the icon horizontally */
+    top: 50%; /* Center the icon vertically */
+    transform: translate(-50%, -50%); /* Center the icon perfectly */
+    transition: opacity 0.3s ease-out; /* Add transition for smooth opacity change */
+}
+
+nav a .text {
+    display: none;
+}
+
+/* Hide the icon on hover */
+nav a:hover .icon {
+    display: none;
+}
+
+/* Display the text on hover */
+nav a:hover .text {
+    display: inline;
+    margin-top: -3px
+}
+
+/* Style the icons */
+nav a .icon::before {
+    content: ""; /* Add content for the pseudo-element */
+    display: inline-block; /* Display the pseudo-element as inline-block */
+    width: 20px; /* Adjust the width of the icon */
+    height: 20px; /* Adjust the height of the icon */
+
+
+    /* Add additional styling for the icon */
+}
+
+nav i {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    font-size: 120%;
+    display: flex;
+    align-items: center;
+}
+
+section {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#section1 {
+    scroll-margin-top: 20px;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* window BEGIN */
+
+a {
+    text-decoration: none;
+}
+
+span {
+    line-height: 9px;
+    vertical-align: 50%;
+}
+
+/* Define a grid container for window-container */
+.window-container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr); /* Two columns */
+    grid-gap: 0px; /* Gap between columns */
+}
+
+.window {
+    background: #fff;
+    width: 40vw;
+    height: auto;
+    max-height: none; /* Add a maximum height to prevent windows from expanding infinitely */
+    overflow-y: auto; /* Add vertical scrollbar if content exceeds maximum height */
+    margin: auto;
+    border: 1px solid #acacac;
+    border-radius: 6px;
+    box-shadow: 0px 0px 20px #acacac;
+    float: left;
+    margin-right: 15%;
+
+}
+
+.window3{
+    background: #fff;
+    width: 50vw;
+    height: auto;
+    max-height: none; /* Add a maximum height to prevent windows from expanding infinitely */
+    overflow-y: auto; /* Add vertical scrollbar if content exceeds maximum height */
+    margin: auto;
+    border: 1px solid #acacac;
+    border-radius: 6px;
+    box-shadow: 0px 0px 20px #acacac;
+    margin-top: 1%;
+    margin-right: 23%;
+}
+
+.window:first-child {
+    margin-right: 4px; /* Adjust the margin as needed */
+}
+
+/* Reset float for the last window */
+.window:last-child {
+    float: none;
+
+}
+
+
+.titlebar {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #ebebeb, color-stop(1.0, #d5d5d5)));
+    background: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
+    background: -moz-linear-gradient(top, #ebebeb, #d5d5d5);
+    background: -ms-linear-gradient(top, #ebebeb, #d5d5d5);
+    background: -o-linear-gradient(top, #ebebeb, #d5d5d5);
+    background: linear-gradient(top, #ebebeb, #d5d5d5);
+    color: #4d494d;
+    font-size: 11pt;
+    line-height: 20px;
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    border-top: 1px solid #f3f1f3;
+    border-bottom: 1px solid #b1aeb1;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    cursor: default;
+}
+
+.buttons {
+    padding-left: 8px;
+    padding-top: 3px;
+    float: left;
+    line-height: 0px;
+}
+
+.buttons:hover a {
+    visibility: visible;
+}
+
+.close {
+    background: #ff5c5c;
+    font-size: 9pt;
+    width: 11px;
+    height: 11px;
+    border: 1px solid #e33e41;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.close:active {
+    background: #c14645;
+    border: 1px solid #b03537;
+}
+
+.close:active .closebutton {
+    color: #4e0002;
+}
+
+.closebutton {
+    color: #820005;
+    visibility: hidden;
+    cursor: default;
+}
+
+.minimize {
+    background: #ffbd4c;
+    font-size: 9pt;
+    line-height: 11px;
+    margin-left: 4px;
+    width: 11px;
+    height: 11px;
+    border: 1px solid #e09e3e;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.minimize:active {
+    background: #c08e38;
+    border: 1px solid #af7c33;
+}
+
+.minimize:active .minimizebutton {
+    color: #5a2607;
+}
+
+.minimizebutton {
+    color: #9a5518;
+    visibility: hidden;
+    cursor: default;
+}
+
+.zoom {
+    background: #00ca56;
+    font-size: 9pt;
+    line-height: 11px;
+    margin-left: 6px;
+    width: 11px;
+    height: 11px;
+    border: 1px solid #14ae46;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.zoom:active {
+    background: #029740;
+    border: 1px solid #128435;
+}
+
+.zoom:active .zoombutton {
+    color: #003107;
+}
+
+.zoombutton {
+    color: #006519;
+    visibility: hidden;
+    cursor: default;
+}
+
+.content {
+    padding: 10px;
+}
+
+/* window END */
+
+/* content BEGIN */
+
+/* CSS for fading effect */
+#fading-content {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+footer {
+    text-align: center; /* Center-align the contents */
+    margin-bottom: 5%;
+    display: flex; /* Use flexbox to layout footer items */
+    justify-content: center; /* Center items horizontally */
+    margin-top: 5%;
+}
+
+footer a {
+    margin: 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex; /* Use flexbox for footer links */
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center items horizontally */
+    /* transition: transform 5s ease; /* Add transition for icon size */
+}
+
+footer a i {
+    font-size: 45px; /* Adjust the icon size */
+    transition: transform 0.3s ease; /* Add transition for both hover and reverting to default size */
+}
+
+footer a span {
+    transition: font-size 0.3s ease; /* Transition only for font size */
+}
+
+footer a:hover i {
+    transform: scale(1.5); /* Grow the icons 20% larger on hover */
+    transition: transform 0.3s ease; /* Add transition for reverting to default size */
+}
+
+footer a:hover span {
+    font-size: 20px; /* Increase the font size on hover */
+}
+
+footer a.linkedin:hover {
+    color: #0066ff; /* Change the color to blue when hovering */
+}
+
+footer a.linkedin span {
+    transition: font-size 0.3s ease, margin-top 0.3s ease; /* Add transition for font size */
+}
+
+footer a.linkedin:hover span {
+    font-size: 18px; /* Increase the font size */
+    margin-top: 15px; /* Move the text downwards */
+    transition: font-size 0.3s ease, margin-top 0.3s ease;
+}
+
+footer a.github:hover {
+    color: #ffffff; /* Change the color to white when hovering */
+}
+
+footer a.github span {
+    transition: font-size 0.3s ease, margin-top 0.3s ease; /* Add transition for font size */
+
+}
+
+footer a.github:hover span {
+    font-size: 18px; /* Increase the font size */
+    margin-top: 15px; /* Move the text downwards */
+}
+
+/* content END */
+
